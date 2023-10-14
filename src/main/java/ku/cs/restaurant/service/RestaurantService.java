@@ -5,6 +5,7 @@ import ku.cs.restaurant.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class RestaurantService {
@@ -20,4 +21,36 @@ public class RestaurantService {
         Restaurant record = repository.save(restaurant);
         return record;
     }
+
+    public Restaurant getById(UUID id) {
+        Restaurant restaurant = repository.findById(id).get();
+        return restaurant;
+    }
+
+    public Restaurant getByName(String name) {
+        Restaurant restaurant = repository.findByName(name);
+        return restaurant;
+    }
+
+    public List<Restaurant> getByLocation(String location) {
+        List<Restaurant> restaurants = repository.findByLocation(location);
+        return restaurants;
+    }
+
+    public Restaurant update(Restaurant requestBody) {
+        UUID id = requestBody.getId();
+        Restaurant record = repository.findById(id).get();
+        record.setName(requestBody.getName());
+        record.setRating(requestBody.getRating());
+        record.setLocation(requestBody.getLocation());
+        record = repository.save(record);
+        return record;
+    }
+
+    public Restaurant delete(UUID id) {
+        Restaurant record = repository.findById(id).get();
+        repository.deleteById(id);
+        return record;
+    }
+
 }

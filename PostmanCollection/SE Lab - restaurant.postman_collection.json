@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "55393853-1eb5-4b9a-a94c-bc45158bef5d",
+		"name": "SE Lab - restaurant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30071480"
+	},
+	"item": [
+		{
+			"name": "Add obj restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Art of Living\",\r\n    \"rating\": 1.0,\r\n    \"location\": \"Bangkhen\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/restaurant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all restaurant obj",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/restaurant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a restaurant obj",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"eeeb144a-81fa-4dbb-8048-bff3975463e0\",\r\n    \"name\": \"Art of Living\",\r\n    \"rating\": 2.0,\r\n    \"location\": \"Bangkhen\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/restaurant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a restaurant obj",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/restaurant/eeeb144a-81fa-4dbb-8048-bff3975463e0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"restaurant",
+						"eeeb144a-81fa-4dbb-8048-bff3975463e0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get restaurant by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/restaurant/name/Art",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"restaurant",
+						"name",
+						"Art"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get restaurant by location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/restaurant/location/Bangkhen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"restaurant",
+						"location",
+						"Bangkhen"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
